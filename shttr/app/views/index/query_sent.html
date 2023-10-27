@@ -1,0 +1,32 @@
+<h1>Based Orthodox Chad says...</h1>
+<div class="w-100" id="placeholder">
+  <h4 class="placeholder-glow">
+    <span class="col-2"></span>
+    <span class="placeholder col-2"></span>
+    <span class="placeholder col-3"></span>
+    <span class="placeholder col-5"></span>
+    <span class="col-2"></span>
+  </h4>
+</div>
+<div class="d-none" id="answer">
+  <h4>Ask your priest!</h4>
+  <a class="btn btn-light" href="/">Back to Home</a>
+  <img class="pt-2" style="width:392px;height:auto;" src="${SHTTR_ASSETS}/images/askyourpriest.png">
+  <p class="pt-1">Need help finding a parish near you? See the directory and map <a href="https://www.assemblyofbishops.org/directories/parishes">here</a>.
+</div>
+<div class="flex-grow-1"></div>
+<p>Site by <a href="https://calebstein.net/" target="_blank">Caleb Stein</a></p>
+<script>
+  window.addEventListener("turbo:load", () => {
+    setTimeout(showContent, 3000);
+  });
+
+  function showContent() {
+    let placeholder = document.getElementById("placeholder");
+    let answer = document.getElementById("answer");
+
+    placeholder.classList.add("d-none");
+    answer.classList.remove("d-none");
+    answer.classList.add("d-flex", "flex-column", "align-items-center");
+  }
+</script>

@@ -1,0 +1,13 @@
+//custom.scss
+
+//Enter custom SCSS to customize Bootstrap here
+
+body {
+  background: linear-gradient(180deg, rgba(255,194,56,1) 0%, rgba(255,128,128,1) 100%);
+}
+
+@import "../../../../bootstrap/bootstrap";
+
+#formLabel::after {
+  background-color: $light;
+}

@@ -1,0 +1,6 @@
+bootstrap
+node_modules
+package.json
+package-lock.json
+shttr-config
+.shttr

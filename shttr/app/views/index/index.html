@@ -1,0 +1,65 @@
+<h1>Based Orthodox Chad</h1>
+<h4>Get the answers to your burning Orthodox questions, curated from only the most based minds on r/orthodoxchristianity</h4>
+<img style="width:256px;height:auto;" src="${SHTTR_ASSETS}/images/chad.webp">
+<form method="post" class="w-100 d-flex align-items-center mt-4">
+  <div class="input-group">
+    <div class="form-floating flex-grow-1">
+      <input type="text" name="query" class="form-control bg-light" id="query" placeholder="Enter Your Question...">
+      <label for="query" id="formLabel">Enter Your Question...</label>
+    </div>
+    <div class="input-group-text p-0">
+      <button class="btn btn-light h-100 text-dark border-0" type="submit" value="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</form>
+<div class="flex-grow-1"></div>
+<ul class="d-flex gap-4 list-unstyled align-items-center">
+  <li>
+    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#privacyPolicy">
+      Privacy Policy
+    </button>
+  </li>
+  <li>
+    <a href="/cgi-bin/admin.sh">Admin</a>
+  </li>
+</ul>
+<div class="modal fade" id="privacyPolicy" tabindex="-1" aria-labelledby="privacyPolicyLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="privacyPolicyLabel">Privacy Policy</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="d-flex flex-column gap-2 list-unstyled">
+          <li>
+            Any query entered into this app may be logged anonymously for research purposes.
+          </li>
+          <li>
+            No personal data is collected as part of this logging, or at any other time on this app except as is needed to establish a session with the app.
+          </li>
+          <li>
+            Any data including but not limited to IP addresses or browser fingerprints is discarded upon the termination of the session with the app.
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="privacyPolicyDismiss">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("turbo:load", () => {
+    const myModal = document.getElementById('privacyPolicy');
+    const myInput = document.getElementById('privacyPolicyDismiss');
+
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus();
+    });
+  });
+</script>
