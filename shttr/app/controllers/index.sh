@@ -1,6 +1,4 @@
-. ${SHTTR_LIB}/io
-. ${SHTTR_LIB}/validator
-. ${SHTTR_LIB}/shttrdb
+use io, validator, shttrdb, form
 
 parse_input
 

@@ -1,0 +1,5 @@
+<li>${query} <button class="btn btn-link" form="${query_id}" data-turbo-confirm="Are you sure?">Delete</button></li>
+<form method="post" id="${query_id}">
+  <input type="hidden" name="_action" value="delete_query">
+  <input type="hidden" name="query_id" value="${query_id}">
+</form>
