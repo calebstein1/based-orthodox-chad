@@ -1,7 +1,3 @@
-new_form_auth_token=$(openssl rand -hex 32)
-export new_form_auth_token
-printf "Set-Cookie: form_auth_token=${new_form_auth_token}; Path=/; secure\n"
-
 if [ "$REQUEST_METHOD" = "POST" ]; then
   parse_input
   parse_cookies
@@ -14,9 +10,17 @@ if [ "$REQUEST_METHOD" = "POST" ]; then
     do_error
     exit 1
   fi
+else
+  new_form_auth_token=$(openssl rand -hex 32)
+  export new_form_auth_token
+  printf "Set-Cookie: form_auth_token=${new_form_auth_token}; Path=/; secure\n"
 fi
 
 vf() {
-  view="${SHTTR_APP}/views/${1}"
+  if [ "$(echo $1 | cut -d/ -f1)" = "$(echo $1 | cut -d/ -f2)" ]; then
+    view="${SHTTR_APP}/views/${CONTROLLER%.sh}/${1}"
+  else
+    view="${SHTTR_APP}/views/${1}"
+  fi
   sed '/<form.*>/ a <input type="hidden" name="auth_token" value="${new_form_auth_token}">' ${view} | v
 }

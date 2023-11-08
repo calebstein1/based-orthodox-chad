@@ -1,6 +1,6 @@
 bootstrap
-node_modules
-package.json
-package-lock.json
-shttr-config
+.sass-cache
 .shttr
+shttr-config
+node_modules
+package-lock.json
