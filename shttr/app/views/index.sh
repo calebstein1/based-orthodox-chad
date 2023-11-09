@@ -2,7 +2,7 @@
 
 v shared/app.html
 
-if [ $query_sent ]; then
+if [ $q ]; then
   v query_sent.html
 else
   vf index.html
