@@ -8,7 +8,7 @@ export TITLE
 . ${SHTTR_APP}/models/${CONTROLLER}
 
 if [ "$REQUEST_METHOD" = "POST" ]; then
-  if [ $validated ]; then
+  if [ $validated -eq 1 ]; then
     register "${username}" "${password}" "/cgi-bin/admin.sh"
   fi
 fi

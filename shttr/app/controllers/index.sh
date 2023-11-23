@@ -8,7 +8,7 @@ export TITLE
 . ${SHTTR_APP}/models/${CONTROLLER}
 
 if [ "$REQUEST_METHOD" = "POST" ]; then
-  if [ $validated ]; then
+  if [ $validated -eq 1 ]; then
     query_id=$(create_table_entry in queries)
     write_data $query_id query "${query}" to queries
   fi
